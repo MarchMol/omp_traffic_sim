@@ -102,13 +102,13 @@ void save_road_state(Intersection *traffic_sim){
 
 void update_cars(Intersection *traffic_sim){
     int nr = traffic_sim->num_roads;
-    #pragma omp parallel for schedule(dynamic)
+    // #pragma omp parallel for collapse(2) schedule(dynamic)
     for(int r = 0; r<nr; r++){
-        int tr_state = traffic_sim->roads[r].traffic_light;
-        if(tr_state!=RED_LIGHT) {
-            for(int i = 0; i<CAR_PER_INT; i++){
+        for(int i = 0; i<CAR_PER_INT; i++){
+            if(traffic_sim->roads[r].traffic_light!=RED_LIGHT){
                 traffic_sim->roads[r].car_pos[i]++;
             }
+            
         }
     }
 
@@ -131,48 +131,16 @@ void update_traffic_lights(Intersection *traffic_sim){
 }
 
 void dynamic_simulation(int n_sims, Intersection traffic_sim, int do_print){
-    omp_set_dynamic(1);
-    omp_set_num_threads(8);
     for(int n = 0; n<=n_sims; n++){
-        int nr = traffic_sim.num_roads;
-        #pragma omp parallel
-        {
-            #pragma omp for nowait schedule(static)
-            for(int r = 0; r<nr; r++){
-                int tr_state = traffic_sim.roads[r].traffic_light;
-                if(tr_state!=RED_LIGHT) {
-                    for(int i = 0; i<CAR_PER_INT; i++){
-                        traffic_sim.roads[r].car_pos[i]++;
-                    }
-                }
-            }
-
-            #pragma omp for nowait schedule(static)
-            for(int i = 0; i<nr; i++){
-                int pre_state = traffic_sim.roads[i].traffic_light;
-                if (pre_state == RED_LIGHT) {
-                    traffic_sim.roads[i].traffic_light = GREEN_LIGHT;
-                }
-                if (pre_state == YELLOW_LIGHT){
-                    traffic_sim.roads[i].traffic_light = RED_LIGHT;
-                } 
-                if (pre_state == GREEN_LIGHT){
-                    traffic_sim.roads[i].traffic_light = YELLOW_LIGHT;
-                } 
-            }
-            // update_cars(&traffic_sim);
-            // update_traffic_lights(&traffic_sim);
-        }
-
- 
+        update_cars(&traffic_sim);
+        update_traffic_lights(&traffic_sim);
     }
-
 }
 
 int main(){
     Intersection traffic_sim;
     traffic_sim.num_roads = NUM_INTERSECTION;
-    freopen("output.txt", "w", stdout); 
+    freopen("output_seq.txt", "w", stdout); 
     // Roads
     Road r_tem;
     for(int r = 0; r<NUM_INTERSECTION;r++){
@@ -192,8 +160,6 @@ int main(){
         0
     );
     double total_end = omp_get_wtime();
-    printf("summary{\n\ttook %f seconds\n}\n\n", total_end - total_start);
-    
-
+    printf("Total time: %f", total_end - total_start)
     return 0;
 }
