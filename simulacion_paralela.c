@@ -101,15 +101,21 @@ void save_road_state(Intersection *traffic_sim){
     }
 }
 
+
+// PARLLELIZED SECTION:
 void dynamic_simulation(int n_sims, Intersection traffic_sim, int do_print){
+    // Se establece que se permite la variacion dinamica de paralelismo
     omp_set_dynamic(1);
     omp_set_num_threads(8);
+
+    // La simulacion se ejecuta secuencial
     for(int n = 0; n<=n_sims; n++){
-        
         int nr = traffic_sim.num_roads;
         #pragma omp parallel
         {
             // Update Cars
+            // La funcion que actualiza la posiscion de los carros se escribe literal para evitar overhead.
+            // Asimismo, es un parallel for con nowait por los carros que tengan luz roja
             #pragma omp for nowait schedule(static)
             for(int r = 0; r<nr; r++){
                 int tr_state = traffic_sim.roads[r].traffic_light;
@@ -120,6 +126,8 @@ void dynamic_simulation(int n_sims, Intersection traffic_sim, int do_print){
                 }
             }
             // Update Traffic Lights
+            // En la actualizacion de semaforos se introduce de la misma manera que antes, aunque en teoria
+            // es una funcion mucho menos pesada.
             #pragma omp for nowait schedule(static)
             for(int i = 0; i<nr; i++){
                 int pre_state = traffic_sim.roads[i].traffic_light;
@@ -133,6 +141,8 @@ void dynamic_simulation(int n_sims, Intersection traffic_sim, int do_print){
                     traffic_sim.roads[i].traffic_light = YELLOW_LIGHT;
                 } 
             }
+
+            // Impresion (solo padre para evitar repeticiones.)
             if(omp_get_thread_num()==0){
                 if(do_print == 1){
                     printf("###### Tick %d ######\n", n);
