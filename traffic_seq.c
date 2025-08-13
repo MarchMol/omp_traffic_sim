@@ -4,11 +4,10 @@
 #include <string.h>
 #include <omp.h>
 // Number of data entries
-#define NUM_CARS 2000
-#define NUM_INTERSECTION 400
-#define CAR_PER_INT 50
-#define NUM_SIMULATIONS 10000
-// #define NUM_INTERSECTION 5
+#define NUM_CARS 20
+#define NUM_INTERSECTION 4
+#define CAR_PER_INT 5
+#define NUM_SIMULATIONS 10
 
 // Buffer size
 #define BUFFER_SIZE 1028
@@ -85,7 +84,7 @@ void save_road_state(Intersection *traffic_sim){
         }
 
         // Save Road str
-        char road_str[1028] ="Cars";
+        char road_str[1028] ="Cars\n";
         int num_cars = traffic_sim->roads[r].num_cars;
         int car_idx_start = traffic_sim->roads[r].car_idx_start;
         int car_pos = 0;
@@ -102,7 +101,6 @@ void save_road_state(Intersection *traffic_sim){
 
 void update_cars(Intersection *traffic_sim){
     int nr = traffic_sim->num_roads;
-    // #pragma omp parallel for collapse(2) schedule(dynamic)
     for(int r = 0; r<nr; r++){
         for(int i = 0; i<CAR_PER_INT; i++){
             if(traffic_sim->roads[r].traffic_light!=RED_LIGHT){
@@ -111,7 +109,6 @@ void update_cars(Intersection *traffic_sim){
             
         }
     }
-
 }
 
 void update_traffic_lights(Intersection *traffic_sim){
@@ -134,13 +131,33 @@ void dynamic_simulation(int n_sims, Intersection traffic_sim, int do_print){
     for(int n = 0; n<=n_sims; n++){
         update_cars(&traffic_sim);
         update_traffic_lights(&traffic_sim);
+        if(do_print == 1){
+            printf("###### Tick %d ######\n", n);
+            save_road_state(&traffic_sim);
+        }
+        if(do_print == 2){
+            printf("------ Tick %d ------\n", n);
+            print_road_state(&traffic_sim);
+        }
     }
 }
 
-int main(){
+int main(int argc, char *argv[]){
+
+    // arg check
+    if(argc!=2){
+        printf("Correct Usage: ./exe <verbose>");
+        return 1;
+    }
+
+    // Var init
+    int do_print = atoi(argv[1]);
     Intersection traffic_sim;
     traffic_sim.num_roads = NUM_INTERSECTION;
-    freopen("output_seq.txt", "w", stdout); 
+    if(do_print == 1){
+        freopen("logs/output_seq.txt", "w", stdout); 
+    }
+
     // Roads
     Road r_tem;
     for(int r = 0; r<NUM_INTERSECTION;r++){
@@ -157,9 +174,9 @@ int main(){
     dynamic_simulation(
         NUM_SIMULATIONS,
         traffic_sim,
-        0
+        do_print
     );
     double total_end = omp_get_wtime();
-    printf("Total time: %f", total_end - total_start)
+    printf("Total time: %f", total_end - total_start);
     return 0;
 }

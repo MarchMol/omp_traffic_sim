@@ -1,4 +1,0 @@
-summary{
-	took 0.520761 seconds
-}
-

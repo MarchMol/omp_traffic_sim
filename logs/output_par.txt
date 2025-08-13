@@ -1,0 +1,364 @@
+###### Tick 0 ######
+Sem 0 at: 2
+Cars
+	id: 0, pos 0 
+	id: 1, pos -1 
+	id: 2, pos -2 
+	id: 3, pos -3 
+	id: 4, pos -4 
+
+Sem 1 at: 0
+Cars
+	id: 5, pos 1 
+	id: 6, pos 0 
+	id: 7, pos -1 
+	id: 8, pos -2 
+	id: 9, pos -3 
+
+Sem 2 at: 1
+Cars
+	id: 10, pos 1 
+	id: 11, pos 0 
+	id: 12, pos -1 
+	id: 13, pos -2 
+	id: 14, pos -3 
+
+Sem 3 at: 2
+Cars
+	id: 15, pos 0 
+	id: 16, pos -1 
+	id: 17, pos -2 
+	id: 18, pos -3 
+	id: 19, pos -4 
+
+###### Tick 1 ######
+Sem 0 at: 1
+Cars
+	id: 0, pos 1 
+	id: 1, pos 0 
+	id: 2, pos -1 
+	id: 3, pos -2 
+	id: 4, pos -3 
+
+Sem 1 at: 2
+Cars
+	id: 5, pos 1 
+	id: 6, pos 0 
+	id: 7, pos -1 
+	id: 8, pos -2 
+	id: 9, pos -3 
+
+Sem 2 at: 0
+Cars
+	id: 10, pos 2 
+	id: 11, pos 1 
+	id: 12, pos 0 
+	id: 13, pos -1 
+	id: 14, pos -2 
+
+Sem 3 at: 1
+Cars
+	id: 15, pos 1 
+	id: 16, pos 0 
+	id: 17, pos -1 
+	id: 18, pos -2 
+	id: 19, pos -3 
+
+###### Tick 2 ######
+Sem 0 at: 0
+Cars
+	id: 0, pos 2 
+	id: 1, pos 1 
+	id: 2, pos 0 
+	id: 3, pos -1 
+	id: 4, pos -2 
+
+Sem 1 at: 1
+Cars
+	id: 5, pos 2 
+	id: 6, pos 1 
+	id: 7, pos 0 
+	id: 8, pos -1 
+	id: 9, pos -2 
+
+Sem 2 at: 2
+Cars
+	id: 10, pos 2 
+	id: 11, pos 1 
+	id: 12, pos 0 
+	id: 13, pos -1 
+	id: 14, pos -2 
+
+Sem 3 at: 0
+Cars
+	id: 15, pos 2 
+	id: 16, pos 1 
+	id: 17, pos 0 
+	id: 18, pos -1 
+	id: 19, pos -2 
+
+###### Tick 3 ######
+Sem 0 at: 2
+Cars
+	id: 0, pos 2 
+	id: 1, pos 1 
+	id: 2, pos 0 
+	id: 3, pos -1 
+	id: 4, pos -2 
+
+Sem 1 at: 0
+Cars
+	id: 5, pos 3 
+	id: 6, pos 2 
+	id: 7, pos 1 
+	id: 8, pos 0 
+	id: 9, pos -1 
+
+Sem 2 at: 1
+Cars
+	id: 10, pos 3 
+	id: 11, pos 2 
+	id: 12, pos 1 
+	id: 13, pos 0 
+	id: 14, pos -1 
+
+Sem 3 at: 2
+Cars
+	id: 15, pos 2 
+	id: 16, pos 1 
+	id: 17, pos 0 
+	id: 18, pos -1 
+	id: 19, pos -2 
+
+###### Tick 4 ######
+Sem 0 at: 1
+Cars
+	id: 0, pos 3 
+	id: 1, pos 2 
+	id: 2, pos 1 
+	id: 3, pos 0 
+	id: 4, pos -1 
+
+Sem 1 at: 2
+Cars
+	id: 5, pos 3 
+	id: 6, pos 2 
+	id: 7, pos 1 
+	id: 8, pos 0 
+	id: 9, pos -1 
+
+Sem 2 at: 0
+Cars
+	id: 10, pos 4 
+	id: 11, pos 3 
+	id: 12, pos 2 
+	id: 13, pos 1 
+	id: 14, pos 0 
+
+Sem 3 at: 1
+Cars
+	id: 15, pos 3 
+	id: 16, pos 2 
+	id: 17, pos 1 
+	id: 18, pos 0 
+	id: 19, pos -1 
+
+###### Tick 5 ######
+Sem 0 at: 0
+Cars
+	id: 0, pos 4 
+	id: 1, pos 3 
+	id: 2, pos 2 
+	id: 3, pos 1 
+	id: 4, pos 0 
+
+Sem 1 at: 1
+Cars
+	id: 5, pos 4 
+	id: 6, pos 3 
+	id: 7, pos 2 
+	id: 8, pos 1 
+	id: 9, pos 0 
+
+Sem 2 at: 2
+Cars
+	id: 10, pos 4 
+	id: 11, pos 3 
+	id: 12, pos 2 
+	id: 13, pos 1 
+	id: 14, pos 0 
+
+Sem 3 at: 0
+Cars
+	id: 15, pos 4 
+	id: 16, pos 3 
+	id: 17, pos 2 
+	id: 18, pos 1 
+	id: 19, pos 0 
+
+###### Tick 6 ######
+Sem 0 at: 2
+Cars
+	id: 0, pos 4 
+	id: 1, pos 3 
+	id: 2, pos 2 
+	id: 3, pos 1 
+	id: 4, pos 0 
+
+Sem 1 at: 0
+Cars
+	id: 5, pos 5 
+	id: 6, pos 4 
+	id: 7, pos 3 
+	id: 8, pos 2 
+	id: 9, pos 1 
+
+Sem 2 at: 1
+Cars
+	id: 10, pos 5 
+	id: 11, pos 4 
+	id: 12, pos 3 
+	id: 13, pos 2 
+	id: 14, pos 1 
+
+Sem 3 at: 2
+Cars
+	id: 15, pos 4 
+	id: 16, pos 3 
+	id: 17, pos 2 
+	id: 18, pos 1 
+	id: 19, pos 0 
+
+###### Tick 7 ######
+Sem 0 at: 1
+Cars
+	id: 0, pos 5 
+	id: 1, pos 4 
+	id: 2, pos 3 
+	id: 3, pos 2 
+	id: 4, pos 1 
+
+Sem 1 at: 0
+Cars
+	id: 5, pos 5 
+	id: 6, pos 4 
+	id: 7, pos 3 
+	id: 8, pos 2 
+	id: 9, pos 1 
+
+Sem 2 at: 0
+Cars
+	id: 10, pos 6 
+	id: 11, pos 5 
+	id: 12, pos 4 
+	id: 13, pos 3 
+	id: 14, pos 2 
+
+Sem 3 at: 1
+Cars
+	id: 15, pos 5 
+	id: 16, pos 4 
+	id: 17, pos 3 
+	id: 18, pos 2 
+	id: 19, pos 1 
+
+###### Tick 8 ######
+Sem 0 at: 0
+Cars
+	id: 0, pos 6 
+	id: 1, pos 5 
+	id: 2, pos 4 
+	id: 3, pos 3 
+	id: 4, pos 2 
+
+Sem 1 at: 1
+Cars
+	id: 5, pos 6 
+	id: 6, pos 5 
+	id: 7, pos 4 
+	id: 8, pos 3 
+	id: 9, pos 2 
+
+Sem 2 at: 2
+Cars
+	id: 10, pos 6 
+	id: 11, pos 5 
+	id: 12, pos 4 
+	id: 13, pos 3 
+	id: 14, pos 2 
+
+Sem 3 at: 0
+Cars
+	id: 15, pos 6 
+	id: 16, pos 5 
+	id: 17, pos 4 
+	id: 18, pos 3 
+	id: 19, pos 2 
+
+###### Tick 9 ######
+Sem 0 at: 2
+Cars
+	id: 0, pos 6 
+	id: 1, pos 5 
+	id: 2, pos 4 
+	id: 3, pos 3 
+	id: 4, pos 2 
+
+Sem 1 at: 0
+Cars
+	id: 5, pos 7 
+	id: 6, pos 6 
+	id: 7, pos 5 
+	id: 8, pos 4 
+	id: 9, pos 3 
+
+Sem 2 at: 1
+Cars
+	id: 10, pos 7 
+	id: 11, pos 6 
+	id: 12, pos 5 
+	id: 13, pos 4 
+	id: 14, pos 3 
+
+Sem 3 at: 2
+Cars
+	id: 15, pos 6 
+	id: 16, pos 5 
+	id: 17, pos 4 
+	id: 18, pos 3 
+	id: 19, pos 2 
+
+###### Tick 10 ######
+Sem 0 at: 1
+Cars
+	id: 0, pos 7 
+	id: 1, pos 6 
+	id: 2, pos 5 
+	id: 3, pos 4 
+	id: 4, pos 3 
+
+Sem 1 at: 2
+Cars
+	id: 5, pos 7 
+	id: 6, pos 6 
+	id: 7, pos 5 
+	id: 8, pos 4 
+	id: 9, pos 3 
+
+Sem 2 at: 0
+Cars
+	id: 10, pos 8 
+	id: 11, pos 7 
+	id: 12, pos 6 
+	id: 13, pos 5 
+	id: 14, pos 4 
+
+Sem 3 at: 1
+Cars
+	id: 15, pos 7 
+	id: 16, pos 6 
+	id: 17, pos 5 
+	id: 18, pos 4 
+	id: 19, pos 3 
+
+Total time: 0.004081
